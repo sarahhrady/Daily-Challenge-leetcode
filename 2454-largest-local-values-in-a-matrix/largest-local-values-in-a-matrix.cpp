@@ -14,15 +14,13 @@ public:
     }
     vector<vector<int>> largestLocal(vector<vector<int>>& grid) {
         int n = grid.size();
-        vector<vector<int>>v;
+        vector<vector<int>>v(n-2, vector<int>(n-2));
         for(int i=0; i<n-2; i++)
         {
-            vector<int>row;
             for(int j=0; j<n-2; j++)
             {
-                row.push_back(maxN(n-2,i,j,grid));
+                v[i][j]=maxN(n-2,i,j,grid);
             }
-            v.push_back(row);
         }
         return v;
     }
